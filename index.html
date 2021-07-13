@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="assets/style.css">
     <title>CODE QUIZ</title>
 </head>
+<body>
 
 <nav id="navbar">
     <p id="scores">View Highscores</p>
     <p id="timer">Time: </p>
 </nav>
+
 <div id="main">
     <h1> Let's Play.... Javascript Fundamentals!</h1>
     <h3> The game is simple, really. When you are ready to begin, click the start button. At which
@@ -19,9 +21,25 @@
         If you answer the question incorrectly, your time will be shortened by 5 seconds. Try to answer all
         of the questions before the time runs out!
     </h3>
-    <button>Let's Play!</button>
+    <button id="start">Let's Play!</button>
 </div>
-<body>
-    
+
+<div hidden id="quizStart" class="quiz">
+    <h2 id="title"></h2>
+    <div id="questionDiv"></div>
+    <p id="result"></p>
+</div>
+
+<div hidden id="result" class="quiz">
+    <h1>Nice Job! You scored: </h1>
+    <p id="score"></p>
+    <div class="highScore">
+        Enter your initials: <input type="text" id="initials">
+        <button id="finalSubmit">Submit Your Score!</button>
+    </div>
+</div>
+
+<script src="assets/script.js"></script>
+<script src="assets/questions.js"></script> 
 </body>
 </html>
