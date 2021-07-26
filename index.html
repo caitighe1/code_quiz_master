@@ -9,41 +9,47 @@
 </head>
 <body>
 
-<nav id="navbar"> 
-    <p id="highScores">View Highscores</p>
-    <p id="timer">Time: </p>
+<nav id="container">
+    <div id="timer">Time: <span id="time">0</span></div>
+    <div id="high-score">High Score: <span id="highScore">0</span></div>
 </nav>
 
-<div id="main" class="show">
-    <h1 id= "intro"> Let's Play.... Javascript Fundamentals!</h1>
-    <h3 id="rules"> The game is simple, really. When you are ready to begin, click the start button. At which
+
+<section id="header" class="show">
+    <div class="intro"> Let's Play.... Javascript Fundamentals!
+        
+        <div class="rules"> The game is simple, really. When you are ready to begin, click the start button. At which
         time you will be presented with a question. If you answer the question correctly, you gain a point.
         If you answer the question incorrectly, your time will be shortened by 5 seconds. Try to answer all
         of the questions before the time runs out!
-    </h3>
-    <button id="startBtn">Let's Play!</button>
-</div>
+    
+        </div>
+        </div>
+
+        <button id="startBtn" class="hidden">Let's Play!</button>
+    </section>
 
 
-<div id ="questionDiv" class="hidden">
-    <div id="questionTitle"></div>
+<div id ="questionsDiv" class="hidden">
+    <div id="question-title"></div>
     <div id="choices"></div>
+
+
+<div id="answerDiv" class="hidden">
+    <p id="feedback" class="hidden"></p>
+</div>
 </div>
 
-<div id="answerDiv">
-    <p id="answer" class="answer"></p>
-</div>
-
-<div id hidden="scoreDiv" class="endQuiz">
-    <h1 id="finalResult">Nice Job! You scored: </h1>
-    <p id="finalScore"></p>
-    <div class="enterInfo">
+<div id hidden="scoreDiv" class="hide">
+    <h2 id="final-result">Nice Job! You scored: </h2>
+    <div id="final-score"></div>
+    <div id="enterInfo">
         Enter your initials: <input type="text" id="initials">
-        <button id="finalSubmit">Submit Your Score!</button>
+        <button id="final-submit">Submit Your Score!</button>
     </div>
 </div>
 
-<script type="text/javascript" src="assets/script.js"></script>
-<script type="text/javascript" src="assets/questions.js"></script> 
+<script type="text/javascript" src="assets/questions.js"></script>
+<script type="text/javascript" src="assets/script.js"></script> 
 </body>
 </html>

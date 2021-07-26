@@ -1,30 +1,38 @@
 //global variables for keeping track of time and questions
 
 var currentQuestionIndex = 0;
-var time = (questions.length) * 15;
+var time = questions.length * 15;
 var timerID;
-var score = 0;
+
 
 //grabbing all DOM elements
-var highScoresEl = document.getElementById("highScores");
-var timerEl = document.getElementById("timer");
-var mainEl = document.getElementById("main");
-var startBtn = document.getElementById("startBtn");
-var questionDiv = document.getElementById("questionDiv");
-var choicesEl = document.getElementById("choices");
-var answerDiv = document.getElementById("answerDiv");
-var finalResultEl = document.getElementById("finalResult");
-var enterInfoEl = document.getElementById("enterInfo");
-var finalSubmit = document.getElementById("finalSubmit");
+var timerEl = document.querySelector("#time");
+var highScore = document.querySelector("#high-score");
+var startBtn = document.querySelector("#startBtn");
+
+var header = document.querySelector("#header");
+
+var questionsEl = document.querySelector("#questionsDiv");
+var questionTitle = document.querySelector("#question-title");
+var choicesEl = document.querySelector("choices");
+
+var answerDiv = document.querySelector("#answerDiv")
+
+var feedbackEl = document.querySelector("#feedback");
+
+//var scoreDivEl = document.querySelector("#scoreDiv");
+//var finalScoreEl = document.querySelector("#final-score");
+var finalSubmit = document.querySelector("final-submit")
+
 
 
 //function to start quiz
 function startQuiz() {
     //hide main div
-    mainEl.setAttribute("class", "hide");
-    
+    header.setAttribute("class", "hidden");
+    startBtn.setAttribute("class", "hidden");
     //call for questions
-    questionDiv.setAttribute("class", "show");
+    questionsDiv.setAttribute("class", "show");
     
     //start timer
     timerId = setInterval(tick, 1000);
@@ -53,11 +61,11 @@ function getQuestion() {
     var currentQuestion = questions[currentQuestionIndex];
 
     //update title with current question
-    var questionTitleEl = document.getElementById("questionTitle"); 
-    questionTitleEl.textContent = currentQuestion.title;
+    //var questionTitle = document.getElementById("questionTitle"); 
+    questionTitle.textContent = currentQuestion.title;
 
     //clears old choices
-    choicesEl.innerHTML = "";
+    //choicesEl.innerHTML = "";
 
     //loop over choices
     currentQuestion.choices.forEach(function(choice, i) {
@@ -80,7 +88,7 @@ function getQuestion() {
 
 function questionClick() {
     // if user gets the question wrong
-    if (this.value !== questions[currentQuestionIndex].answer) {
+    if (this.value !== questions[currentQuestionIndex].answerEl) {
         time -= 15;
 
         if (time <= 0) {
@@ -96,9 +104,9 @@ function questionClick() {
     }
 
     //time for results to show right or wrong
-    answerDiv.setAttribute("class", "answer");
+    feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
-        answerDiv.setAttribute("class", "answer hide");
+        feedbackEl.setAttribute("class", "hide");
     }, 1000);
 
     //move to next question
@@ -118,15 +126,15 @@ function quizEnd() {
     clearInterval(timerId);
 
     //show final screen
-    var scoreDivEl = document.getElementById("scoreDiv");
+    var scoreDivEl = document.querySelector("#scoreDiv");
     scoreDivEl.setAttribute("class", "show");
 
     //show final score
-    var finalScoreEl = document.getElementById("finalScore");
+    var finalScoreEl = document.querySelector("#final-score");
     finalScoreEl.textContent = time;
 
     //hide questions
-    quiz.setAttribute("class", "hide");
+    questionsDiv.setAttribute("class", "hide");
 
 
 
