@@ -9,12 +9,12 @@
 </head>
 <body>
 
-<nav id="navbar">
+<nav id="navbar"> 
     <p id="highScores">View Highscores</p>
     <p id="timer">Time: </p>
 </nav>
 
-<div id="main">
+<div id="main" class="main">
     <h1 id= "title"> Let's Play.... Javascript Fundamentals!</h1>
     <h3 id="rules"> The game is simple, really. When you are ready to begin, click the start button. At which
         time you will be presented with a question. If you answer the question correctly, you gain a point.
@@ -24,7 +24,7 @@
     <button id="start">Let's Play!</button>
 </div>
 
-<div id="questionDiv" class="quiz">
+<div id hidden="questionDiv" class="quiz">
     <h2 id="questionTitle"></h2>
     <ul id="choices">
         <li></li>
@@ -36,10 +36,10 @@
     <p id="answer"></p>
 </div>
 
-<div id="score" class="quiz">
-    <h1 id="farewell">Nice Job! You scored: </h1>
-    <p id="result"></p>
-    <div class="highScore">
+<div id hidden="scoreDiv" class="quiz">
+    <h1 id="finalResult">Nice Job! You scored: </h1>
+    <p id="finalScore"></p>
+    <div class="enterInfo">
         Enter your initials: <input type="text" id="initials">
         <button id="finalSubmit">Submit Your Score!</button>
     </div>
