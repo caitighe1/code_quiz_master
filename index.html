@@ -14,25 +14,23 @@
     <p id="timer">Time: </p>
 </nav>
 
-<div id="main" class="main">
-    <h1 id= "title"> Let's Play.... Javascript Fundamentals!</h1>
+<div id="main" class="show">
+    <h1 id= "intro"> Let's Play.... Javascript Fundamentals!</h1>
     <h3 id="rules"> The game is simple, really. When you are ready to begin, click the start button. At which
         time you will be presented with a question. If you answer the question correctly, you gain a point.
         If you answer the question incorrectly, your time will be shortened by 5 seconds. Try to answer all
         of the questions before the time runs out!
     </h3>
-    <button id="start">Let's Play!</button>
+    <button id="startBtn">Let's Play!</button>
 </div>
 
-<div id hidden="questionDiv" class="quiz">
-    <h2 id="questionTitle"></h2>
-    <ul id="choices">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div id="answerDiv"></div>
+
+<div id ="questionDiv" class="hidden">
+    <div id="questionTitle"></div>
+    <div id="choices"></div>
+</div>
+
+<div id="answerDiv">
     <p id="answer" class="answer"></p>
 </div>
 
@@ -45,7 +43,7 @@
     </div>
 </div>
 
-<script src="assets/script.js"></script>
-<script src="assets/questions.js"></script> 
+<script type="text/javascript" src="assets/script.js"></script>
+<script type="text/javascript" src="assets/questions.js"></script> 
 </body>
 </html>

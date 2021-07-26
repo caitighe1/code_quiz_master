@@ -54,4 +54,4 @@ var questions = [
         answer: "Method"
     }
 
-];
+]

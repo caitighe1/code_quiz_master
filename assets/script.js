@@ -6,21 +6,14 @@ var timerID;
 var score = 0;
 
 //grabbing all DOM elements
-var navbarEl = document.getElementById("navbar");
 var highScoresEl = document.getElementById("highScores");
 var timerEl = document.getElementById("timer");
-var mainEl = document.querySelector("main");
-var headerEl = document.getElementById("title")
-var rulesEl = document.getElementById("rules");
-var startBtnEl = document.getElementById("startBtn");
-var questiondivEl = document.querySelector("quiz");
-
+var mainEl = document.getElementById("main");
+var startBtn = document.getElementById("startBtn");
+var questionDiv = document.getElementById("questionDiv");
 var choicesEl = document.getElementById("choices");
 var answerDiv = document.getElementById("answerDiv");
-var answerEl = document.querySelector("answer");
-
 var finalResultEl = document.getElementById("finalResult");
-var finalScoreEl = document.getElementById("finalScore");
 var enterInfoEl = document.getElementById("enterInfo");
 var finalSubmit = document.getElementById("finalSubmit");
 
@@ -31,7 +24,7 @@ function startQuiz() {
     mainEl.setAttribute("class", "hide");
     
     //call for questions
-    quiz.setAttribute("class", "show");
+    questionDiv.setAttribute("class", "show");
     
     //start timer
     timerId = setInterval(tick, 1000);
@@ -39,7 +32,7 @@ function startQuiz() {
     //show start time
     timerEl.textContent = time;
 
-    getQuestions();
+    getQuestion();
 }
 
 //timer function
@@ -103,9 +96,9 @@ function questionClick() {
     }
 
     //time for results to show right or wrong
-    answerEl.setAttribute("class", "answer");
+    answerDiv.setAttribute("class", "answer");
     setTimeout(function() {
-        answerEl.setAttribute("class", "answer hide");
+        answerDiv.setAttribute("class", "answer hide");
     }, 1000);
 
     //move to next question
@@ -125,17 +118,22 @@ function quizEnd() {
     clearInterval(timerId);
 
     //show final screen
-    var scoreDivEl = document.querySelector("endQuiz");
+    var scoreDivEl = document.getElementById("scoreDiv");
     scoreDivEl.setAttribute("class", "show");
 
     //show final score
-    
+    var finalScoreEl = document.getElementById("finalScore");
+    finalScoreEl.textContent = time;
+
+    //hide questions
+    quiz.setAttribute("class", "hide");
+
 
 
 }
 
 
 //to start quiz
-startBtnEl.onclick = startQuiz;
+startBtn.onclick = startQuiz;
 
 
