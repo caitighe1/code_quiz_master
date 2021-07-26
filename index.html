@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>CODE QUIZ</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./resources/css/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="text/css" href="./resources/css/normalize.css"> -->
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <title>Code Quiz</title>
 </head>
+
+
 <body>
+    <div class="container">
+        <header class="row">
+            <div class="col-md-6" id="highscores">
+                <a href="./assets/highscores.js" ></a>
+            </div>
+            <div class="col-md-6" id="timer">
+                Time: <span id="time">0</span>
+            </div>
+        </header>
+    
 
-<nav id="container">
-    <div id="timer">Time: <span id="time">0</span></div>
-    <div id="high-score">High Score: <span id="highScore">0</span></div>
-</nav>
 
-
-<section id="header" class="show">
-    <div class="intro"> Let's Play.... Javascript Fundamentals!
+<section id="title-section" class="show">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Let's Play.... Javascript Fundamentals!</h1>
+            <p>The game is simple, really. When you are ready to begin, click the start button. At which
+                time you will be presented with a question. If you answer the question correctly, you gain a point.
+                If you answer the question incorrectly, your time will be shortened by 5 seconds. Try to answer all
+                of the questions before the time runs out!</p>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-md-12">
+                <button id="startButton">Start Quiz!</button>
+            </div>
+    </div>
+</section>
         
-        <div class="rules"> The game is simple, really. When you are ready to begin, click the start button. At which
-        time you will be presented with a question. If you answer the question correctly, you gain a point.
-        If you answer the question incorrectly, your time will be shortened by 5 seconds. Try to answer all
-        of the questions before the time runs out!
+       
     
         </div>
         </div>
