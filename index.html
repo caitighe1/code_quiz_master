@@ -10,13 +10,13 @@
 <body>
 
 <nav id="navbar">
-    <p hidden id="scores">View Highscores</p>
-    <p hidden id="timer">Time: </p>
+    <p id="highScores">View Highscores</p>
+    <p id="timer">Time: </p>
 </nav>
 
 <div id="main">
-    <h1> Let's Play.... Javascript Fundamentals!</h1>
-    <h3> The game is simple, really. When you are ready to begin, click the start button. At which
+    <h1 id= "title"> Let's Play.... Javascript Fundamentals!</h1>
+    <h3 id="rules"> The game is simple, really. When you are ready to begin, click the start button. At which
         time you will be presented with a question. If you answer the question correctly, you gain a point.
         If you answer the question incorrectly, your time will be shortened by 5 seconds. Try to answer all
         of the questions before the time runs out!
@@ -24,7 +24,7 @@
     <button id="start">Let's Play!</button>
 </div>
 
-<div hidden id="questions" class="quiz">
+<div id="questionDiv" class="quiz">
     <h2 id="questionTitle"></h2>
     <ul id="choices">
         <li></li>
@@ -32,13 +32,13 @@
         <li></li>
         <li></li>
     </ul>
-    <div id="questionDiv"></div>
-    <p id="result"></p>
+    <div id="answerDiv"></div>
+    <p id="answer"></p>
 </div>
 
-<div hidden id="score" class="quiz">
-    <h1>Nice Job! You scored: </h1>
-    <p id="score"></p>
+<div id="score" class="quiz">
+    <h1 id="farewell">Nice Job! You scored: </h1>
+    <p id="result"></p>
     <div class="highScore">
         Enter your initials: <input type="text" id="initials">
         <button id="finalSubmit">Submit Your Score!</button>
