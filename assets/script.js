@@ -17,8 +17,8 @@ var questiondivEl = document.querySelector("quiz");
 
 var choicesEl = document.getElementById("choices");
 var answerDiv = document.getElementById("answerDiv");
-var answerEl = document.getElementById("result");
-var scoreDivEl = document.getElementById("scoreDiv");
+var answerEl = document.querySelector("answer");
+
 var finalResultEl = document.getElementById("finalResult");
 var finalScoreEl = document.getElementById("finalScore");
 var enterInfoEl = document.getElementById("enterInfo");
@@ -81,6 +81,57 @@ function getQuestion() {
         //display on page
         choicesEl.appendChild(choiceBtns);
     });
+}
+
+//function to progress the quiz
+
+function questionClick() {
+    // if user gets the question wrong
+    if (this.value !== questions[currentQuestionIndex].answer) {
+        time -= 15;
+
+        if (time <= 0) {
+            time = 0;
+        }
+
+        //display updated time on page
+        timerEl.textContent = time;
+
+        answerEl.textContent = "Wrong";
+    } else {
+        answerEl.textContent = "Correct!";
+    }
+
+    //time for results to show right or wrong
+    answerEl.setAttribute("class", "answer");
+    setTimeout(function() {
+        answerEl.setAttribute("class", "answer hide");
+    }, 1000);
+
+    //move to next question
+    currentQuestionIndex++;
+
+    //make sure there are still questions
+    if(currentQuestionIndex === questions.length) {
+        quizEnd();
+    } else {
+        getQuestion();
+    }
+}
+
+//function to end the quiz
+function quizEnd() {
+    // stop timer
+    clearInterval(timerId);
+
+    //show final screen
+    var scoreDivEl = document.querySelector("endQuiz");
+    scoreDivEl.setAttribute("class", "show");
+
+    //show final score
+    
+
+
 }
 
 
